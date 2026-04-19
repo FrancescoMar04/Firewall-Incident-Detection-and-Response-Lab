@@ -10,7 +10,7 @@ The objective is to demonstrate how network traffic can be controlled, monitored
 
 ## Simulated Incident
 
-The lab simulates a network-based security incident involving unauthorized access attempts and suspicious traffic patterns.
+The lab simulates a network-based security incident involving unauthorized access attempts and suspicious traffic patterns, such as port scanning and repeated connection attempts.
 
 These activities are monitored and controlled through firewall rules, allowing detection and response at the network level.
 
@@ -22,7 +22,7 @@ These activities are monitored and controlled through firewall rules, allowing d
 2. Firewall installation and configuration  
 3. Rule creation and traffic control  
 4. Attack simulation  
-5. Detection, analysis, and response  
+5. Detection and incident response
 6. Final report  
 
 ---
@@ -57,8 +57,8 @@ The firewall is positioned between the attacker and the victim to monitor and co
 
 ## Key Skills Demonstrated
 
-* Firewall rule configuration and traffic filtering  
-* Network traffic monitoring and analysis  
+* Firewall configuration and rule management 
+* Network traffic monitoring and analysis 
 * Detection of unauthorized access attempts  
 * Incident response based on network-level events  
 
