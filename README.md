@@ -13,12 +13,14 @@ The objective is to demonstrate how network traffic can be controlled, monitored
 2. Firewall installation and configuration
 3. Rule creation and traffic control
 4. Attack simulation
-5. Detection and response
+5. Detection, analysis, and response
 6. Final report
 
 ---
 
 ## Lab Architecture
+
+The firewall is positioned between the attacker and the victim to monitor and control network traffic.
 
 * Firewall: pfSense
 * Victim: Ubuntu Server
