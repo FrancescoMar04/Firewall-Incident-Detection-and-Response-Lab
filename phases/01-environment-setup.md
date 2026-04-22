@@ -64,7 +64,7 @@ Successful communication confirms that the lab environment is correctly configur
 
 ## Evidence
 
-![pfSense Dashboard](../screenshots/pfsense-dashboard.png)
+![pfSense Dashboard](../screenshots/pfsense-dashboard.jpg)
 
 ---
 
