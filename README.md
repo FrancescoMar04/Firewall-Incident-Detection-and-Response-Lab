@@ -19,11 +19,11 @@ These activities are monitored and controlled through firewall rules, allowing d
 ## Workflow
 
 1. Environment setup  
-2. Firewall installation and configuration  
+2. Firewall configuration and baseline setup  
 3. Rule creation and traffic control  
 4. Attack simulation  
-5. Detection and incident response
-6. Final report  
+5. Detection and incident response  
+6. Final report
 
 ---
 
