@@ -74,6 +74,8 @@ Firewall logs were analyzed to verify traffic handling:
 
 ![WAN Rules](../screenshots/wan-rules-baseline.jpg)
 
+### Firewall Logs (Blocked Traffic)
+
 ![Firewall Logs](../screenshots/firewall-logs-baseline.jpg)
 
 ---
