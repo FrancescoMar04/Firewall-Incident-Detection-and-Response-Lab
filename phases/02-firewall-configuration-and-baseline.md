@@ -72,6 +72,8 @@ Firewall logs were analyzed to verify traffic handling:
 
 ## Evidence
 
+### WAN Rules (Default Deny Configuration)
+
 ![WAN Rules](../screenshots/wan-rules-baseline.jpg)
 
 ### Firewall Logs (Blocked Traffic)
