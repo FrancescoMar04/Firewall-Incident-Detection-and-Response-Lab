@@ -10,9 +10,9 @@ The objective of this phase is to analyze and validate the default behavior of t
 
 The lab environment consists of three isolated network segments:
 
-- WAN (External / Attacker Network)
+- WAN (External Network – Internet via NAT)
 - LAN (Internal Network - Ubuntu)
-- OPT1 (Isolated Attacker Network - Kali Linux)
+- OPT1 (Attacker Network – Kali Linux)
 
 All traffic between these segments is routed through the pfSense firewall.
 
@@ -39,7 +39,7 @@ To validate the firewall behavior, multiple tests were performed from the attack
 
 ### 1. WAN Reachability Test
 
-- ICMP (ping) requests to the WAN interface failed
+- ICMP (ping) requests to the WAN interface failed, confirming that the firewall does not respond to unsolicited external traffic.
 - This confirms that the firewall does not respond to unsolicited external requests
 
 ### 2. Port Scanning
@@ -50,7 +50,7 @@ To validate the firewall behavior, multiple tests were performed from the attack
 ### 3. Internal Network Access Test
 
 - Attempts to reach the internal Ubuntu server from the attacker network failed
-- `traceroute` results showed no response beyond the firewall
+- traceroute results showed no response beyond the first hop (pfSense), indicating that traffic is being filtered at the firewall level.
 - TCP connection attempts resulted in timeouts
 
 This confirms that:
@@ -67,6 +67,8 @@ Firewall logs were analyzed to verify traffic handling:
 - Blocked traffic from the attacker network is recorded
 - Source and destination IP addresses are visible
 - The logs confirm that the firewall is actively filtering unauthorized traffic
+
+The logs provide visibility into blocked traffic attempts, which is essential for monitoring and incident detection.
 
 ---
 
