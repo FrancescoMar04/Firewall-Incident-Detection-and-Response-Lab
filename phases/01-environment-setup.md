@@ -72,7 +72,7 @@ The Ubuntu server is placed in the internal LAN and uses pfSense as its default 
 Kali Linux is configured as an external attacker machine:
 
 - Network Adapter: VMnet2 (Host-Only)
-- IP Address: 192.168.20.X
+- IP Address: 192.168.20.129
 - Default Gateway: pfSense (WAN/OPT1 interface)
 
 This setup simulates an attacker attempting to access the internal network.
