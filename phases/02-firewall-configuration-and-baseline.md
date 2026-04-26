@@ -10,9 +10,13 @@ The objective of this phase is to analyze and validate the default behavior of t
 
 The lab environment consists of three isolated network segments:
 
-- WAN (External Network – Internet via NAT)
-- LAN (Internal Network - Ubuntu)
-- OPT1 (Attacker Network – Kali Linux)
+pfSense:
+- WAN: NAT
+- LAN: Host-Only / internal network
+- OPT1: attacker network
+
+Ubuntu: LAN
+Kali: OPT1
 
 All traffic between these segments is routed through the pfSense firewall.
 
