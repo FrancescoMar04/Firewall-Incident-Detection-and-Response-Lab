@@ -104,11 +104,11 @@ In this lab, the OPT1 interface is used to simulate an attacker network without 
 
 ### Firewall Rule (OPT1)
 
-![OPT1 Rule](../screenshots/opt1-rule-ssh.jpg)
+![OPT1 Rule](../screenshots/opt1-rule-ssh.png)
 
 ### Successful SSH Connectivity Test
 
-![SSH Test](../screenshots/ssh-success.jpg)
+![SSH Test](../screenshots/ssh-success.png)
 
 ---
 
