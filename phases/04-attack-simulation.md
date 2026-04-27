@@ -2,100 +2,66 @@
 
 ## Objective
 
-The objective of this phase is to simulate realistic attacker behavior in order to generate observable activity within the lab environment.
+The objective of this phase is to simulate realistic attacker behavior at the network level in order to generate observable traffic patterns within the firewall.
 
-No defensive actions are taken during this phase. The goal is to produce meaningful data that will later be analyzed in the detection and incident response phase.
+No defensive actions are performed during this phase. The focus is on reconnaissance and service probing activities that will later be analyzed.
 
 ---
 
 ## Context
 
-The internal Ubuntu server exposes an SSH service (port 22), which was intentionally allowed in the previous phase.
+The internal Ubuntu server exposes a limited attack surface, with only the SSH service (port 22) accessible through the firewall.
 
-From the attacker perspective, this represents a potential entry point into the internal network.
-
----
-
-## Attack Simulation
-
-The attack simulation was performed from the attacker machine using two main techniques:
-
-### 1. Network Scanning
-
-A full TCP scan was executed to identify exposed services on the target system:
-
-nmap -sS -Pn 192.168.10.128
-
-This scan simulates reconnaissance and service enumeration activities typically performed by an attacker.
-
-The results confirmed that:
-
-- Port 22 (SSH) is open
-- All other ports are filtered by the firewall
+From an attacker’s perspective, this represents a typical scenario where initial reconnaissance is required to identify available services and potential entry points.
 
 ---
 
-### 2. Unauthorized Access Attempts
+## Attack Methodology
 
-Multiple SSH login attempts were performed using invalid credentials:
-
-ssh user@192.168.10.128
-ssh admin@192.168.10.128
-
-
-Each attempt involved entering incorrect passwords multiple times, simulating repeated unauthorized access attempts from the attacker machine.
-
-This activity mimics common attacker behavior, where multiple usernames are tested to identify valid credentials or weak configurations.
+The attack simulation was conducted from the attacker machine using a combination of full port scanning and service probing techniques.
 
 ---
 
-## Evidence Collection (Host Level)
+### Full Port Scan and Service Probing
 
-To verify the impact of the simulated attack, system logs were analyzed on the Ubuntu server:
+A comprehensive TCP SYN scan combined with service detection was executed:
 
-sudo grep -a sshd /var/log/auth.log | tail -20
+nmap -sS -Pn -p- -sV --reason -T4 192.168.10.128
 
+This command performs:
 
-The logs show multiple failed authentication attempts, including:
-
-- Invalid user attempts
-- Failed password entries
-
-These entries confirm that the attack activity reached the target system and was processed by the SSH service.
+- A stealth TCP SYN scan across all ports
+- Service version detection on discovered services
+- Aggressive timing to simulate realistic attacker behavior
+- Reason output to explain port states
 
 ---
 
-## Key Observations
+## Observations
 
-- The firewall allowed access only to the explicitly permitted service (SSH)
-- All other ports remained inaccessible during scanning
-- Repeated authentication failures were successfully logged on the target system
-- The attacker behavior generated a recognizable pattern of activity
+- The scan identified port 22 (SSH) as open
+- All other ports were reported as filtered, indicating active firewall filtering
+- A large number of connection attempts were generated toward multiple ports
+- The attacker focused on identifying exposed services and gathering additional information
+
+This activity reflects a typical reconnaissance phase, where an attacker maps the target surface before attempting further exploitation.
 
 ---
 
 ## Evidence
 
-### Network Scan
+### Network Scan Output
 
-![Nmap Scan](../screenshots/nmap-complete-scan.jpg)
-
-### SSH Access Attempts
-
-![SSH Logs](../screenshots/ssh-failed-log.jpg)
-
-### SSH Logs (Ubuntu)
-
-![SSH Attempts](../screenshots/ssh-access-attempts.jpg)
+![Nmap Scan](../screenshots/nmap-recon-probing-scan.jpg)
 
 ---
 
 ## Conclusion
 
-The attack simulation successfully generated realistic attacker activity within the lab environment.
+The attack simulation successfully generated realistic reconnaissance and probing traffic.
 
-The combination of network scanning and repeated unauthorized access attempts produced clear and verifiable traces both at the network and host level.
+The performed scan mimics common attacker behavior during the initial stages of an intrusion attempt, including port discovery and service identification.
 
-No defensive actions were taken during this phase, ensuring that the generated data can be properly analyzed in the next phase.
+No defensive actions were taken during this phase, ensuring that the generated traffic can be analyzed in the next phase from a defensive perspective.
 
-This sets the foundation for detection, analysis, and incident response activities.
+This provides a solid foundation for detecting suspicious patterns and implementing appropriate countermeasures.
