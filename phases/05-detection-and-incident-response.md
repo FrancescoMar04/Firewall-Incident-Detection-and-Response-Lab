@@ -33,7 +33,7 @@ This behavior is consistent with a **port scanning activity**, where an attacker
 
 ## Evidence – Scan Pattern
 
-![Firewall Scan Pattern](../screenshots/firewall-scan-pattern.jpg)
+![Firewall Scan Pattern](../screenshots/firewall-scan-pattern.png)
 
 ---
 
@@ -55,7 +55,7 @@ This statistical perspective reinforces the identification of a scanning pattern
 
 ## Evidence – Statistical Overview
 
-![Firewall Statistical Analysis](../screenshots/firewall-statistical-analysis.jpg)
+![Firewall Statistical Analysis](../screenshots/firewall-statistical-analysis.png)
 
 ---
 
@@ -95,7 +95,7 @@ The rule was placed at the top of the rule set to ensure it takes precedence ove
 
 ## Evidence – Block Rule
 
-![Block Rule](../screenshots/opt1-block-attacker-rule.jpg)
+![Block Rule](../screenshots/opt1-block-attacker-rule.png)
 
 ---
 
@@ -113,13 +113,13 @@ This confirms that the firewall rule successfully prevented further reconnaissan
 
 ## Evidence – Post-Block Scan
 
-![Nmap After Block](../screenshots/nmap-after-block.jpg)
+![Nmap After Block](../screenshots/nmap-after-block.png)
 
 ---
 
 ## Evidence – Blocked Traffic Logs
 
-![Blocked Traffic](../screenshots/firewall-blocked-traffic.jpg)
+![Blocked Traffic](../screenshots/firewall-blocked-traffic.png)
 
 ---
 
