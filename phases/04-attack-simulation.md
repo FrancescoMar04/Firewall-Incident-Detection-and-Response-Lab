@@ -82,11 +82,11 @@ These entries confirm that the attack activity reached the target system and was
 
 ### SSH Access Attempts
 
-![SSH Attempts](../screenshots/ssh-access-attempts.jpg)
+![SSH Logs](../screenshots/ssh-failed-log.jpg)
 
 ### SSH Logs (Ubuntu)
 
-![SSH Logs](../screenshots/ssh-failed-log.jpg)
+![SSH Attempts](../screenshots/ssh-access-attempts.jpg)
 
 ---
 
