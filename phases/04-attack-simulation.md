@@ -52,7 +52,7 @@ This activity reflects a typical reconnaissance phase, where an attacker maps th
 
 ### Network Scan Output
 
-![Nmap Scan](../screenshots/nmap-recon-probing-scan.jpg)
+![Nmap Scan](../screenshots/nmap-recon-probing-scan.png)
 
 ---
 
