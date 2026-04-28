@@ -73,7 +73,7 @@ Kali Linux is configured as an external attacker machine:
 
 - Network Adapter: VMnet2 (Host-Only)
 - IP Address: 192.168.20.129
-- Default Gateway: pfSense (WAN/OPT1 interface)
+- Default Gateway: pfSense (OPT1 interface)
 
 This setup simulates an attacker attempting to access the internal network.
 
@@ -86,7 +86,7 @@ The connectivity between the firewall and the Ubuntu server was verified using:
 - ICMP (ping) tests
 - Access to the pfSense web interface from Ubuntu
 
-Successful communication confirms that the lab environment is correctly configured.
+Successful communication confirms that communication between the firewall and internal systems is correctly established
 
 ---
 
