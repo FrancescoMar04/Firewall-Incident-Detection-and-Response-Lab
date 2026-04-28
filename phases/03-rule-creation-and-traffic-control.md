@@ -57,9 +57,9 @@ This rule allows SSH traffic from the attacker network to the internal server.
 After applying the rule, connectivity tests were performed from the attacker machine (Kali Linux).
 
 ### Allowed Traffic
-
+'''
 nc -zv 192.168.10.128 22
-
+'''
 Result:
 
 - Connection successful
