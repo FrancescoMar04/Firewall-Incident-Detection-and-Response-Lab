@@ -26,7 +26,9 @@ The attack simulation was conducted from the attacker machine using a combinatio
 
 A comprehensive TCP SYN scan combined with service detection was executed:
 
+```bash
 nmap -sS -Pn -p- -sV --reason -T4 192.168.10.128
+```
 
 This command performs:
 
